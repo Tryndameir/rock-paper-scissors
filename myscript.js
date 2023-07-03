@@ -24,7 +24,7 @@ console.log("cpu: " + computerSelection);
 function playRound (playerSelection, computerSelection) {
 
     /* Prompt user for input */
-    playerSelection = prompt("Enter your choice: ");let playerSelection = "";
+    playerSelection = prompt("Enter your choice: ");
     console.log("Player: " + playerSelection);
 
     if (playerSelection == null)
