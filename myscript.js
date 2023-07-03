@@ -1,14 +1,12 @@
 let rock = "rock";
 let paper = "paper";
 let scissors = "scissors";
-let cpuChoice = undefined;
 let player = 0;
 let cpu = 0;
 const array = ["rock", "paper", "scissors"];
+let playerSelection = "";
 
-/* Prompt user for input */
-let playerSelection = prompt("Enter your choice: ");
-playerSelection = playerSelection.toLowerCase();
+
 
 /* Function to get random choice from cpu */
 function getComputerChoice(arr) {
@@ -18,52 +16,37 @@ function getComputerChoice(arr) {
     return result;
 }
 
-const result = getComputerChoice(array);
-console.log(result);
-const computerSelection = result;
+const computerSelection = getComputerChoice(array);
+console.log("cpu: " + computerSelection);
+
 
 /* Function takes cpu choice and player choice, compares it and determines a winner */
 function playRound (playerSelection, computerSelection) {
 
-    if (((playerSelection == "rock") && (computerSelection == "rock")) || ((playerSelection == "paper") && (computerSelection == "paper")) || ((playerSelection == "scissors") && (computerSelection == "scissors"))) 
+    /* Prompt user for input */
+    playerSelection = prompt("Enter your choice: ");let playerSelection = "";
+    console.log("Player: " + playerSelection);
+
+    if (playerSelection == null)
     {
-        alert("It's a tie!");
-    }
-    
-    else if (((playerSelection == "rock") && (computerSelection == "paper")) || ((playerSelection == "paper") && (computerSelection == "scissors")) || ((playerSelection == "scissors") && (computerSelection == "rock")))
-    {
-        cpu = cpu + 1;
-        alert("You lose! Paper beats rock!");
-    }
-    
-    else 
-    {
-        player += 1;
-        alert("You win!");
+        alert("Cancelled");
     }
 
+    else
+    {
+        playerSelection = playerSelection.toLowerCase();
+    }
+
+    if (playerSelection == "rock" && computerSelection == "rock") 
+    {
+    console.log("It's a tie!\n");
+    }
+
+    else {
+        console.log("GG");
+    }
 }
 
-function game() {
-    for (let i = 0; i < 5; i++)
-    {
-        playRound();
-    }
-    if (player > cpu)
-    {
-        alert("You are the winner of the game!");
-    }
+playRound();
 
-    else if (cpu > player) 
-    {
-        alert("You lose! Try again");
-    }
-
-    else 
-    {
-        alert("Its a tie!");
-    }
-
-}
-
-game();
+    
