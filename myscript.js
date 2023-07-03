@@ -5,7 +5,9 @@ let cpuChoice = undefined;
 let player = 0;
 let cpu = 0;
 const array = ["rock", "paper", "scissors"];
-const playerSelection = prompt("Enter your choice: ");
+
+/* Prompt user for input */
+let playerSelection = prompt("Enter your choice: ");
 playerSelection = playerSelection.toLowerCase();
 
 /* Function to get random choice from cpu */
@@ -37,7 +39,31 @@ function playRound (playerSelection, computerSelection) {
     else 
     {
         player += 1;
-        alert("You win!")
+        alert("You win!");
     }
 
 }
+
+function game() {
+    for (let i = 0; i < 5; i++)
+    {
+        playRound();
+    }
+    if (player > cpu)
+    {
+        alert("You are the winner of the game!");
+    }
+
+    else if (cpu > player) 
+    {
+        alert("You lose! Try again");
+    }
+
+    else 
+    {
+        alert("Its a tie!");
+    }
+
+}
+
+game();
