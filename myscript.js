@@ -24,6 +24,8 @@ function playRound (playerSelection, computerSelection) {
     function getPlayerChoice(playerChoice) {
 
         playerChoice = prompt("Enter your choice: "); 
+
+        /* While loop incase user enters wrong choice */
         while ((playerChoice !== "rock") && (playerChoice !== "paper") && (playerChoice !== "scissors")) {
             playerChoice = prompt("Please enter a valid choice: "); 
         }
@@ -65,6 +67,7 @@ function playRound (playerSelection, computerSelection) {
 
 function game() {
 
+    /* Loop to play game 5 times */
     for (let i = 0; i < 5; i++)
     {
         playRound();
