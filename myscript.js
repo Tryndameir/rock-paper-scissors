@@ -4,27 +4,32 @@ let scissors = "scissors";
 let player = 0;
 let cpu = 0;
 const array = ["rock", "paper", "scissors"];
-let playerSelection = "";
+let playerChoice = "";
 
 
 
-/* Function to get random choice from cpu */
-function getComputerChoice(arr) {
+
+/* Function takes player choice and cpu choice, compares it and determines a winner */
+function playRound (playerSelection, computerSelection) {
+
+    /* Function to get random choice from cpu */
+    function getComputerChoice(arr) {
      
     const randInt = Math.floor(Math.random() * arr.length);
     const result = arr[randInt];
     return result;
 }
-
-const computerSelection = getComputerChoice(array);
-console.log("cpu: " + computerSelection);
-
-
-/* Function takes cpu choice and player choice, compares it and determines a winner */
-function playRound (playerSelection, computerSelection) {
-
+    computerSelection = getComputerChoice(array);
+    console.log("Cpu: " + computerSelection);
+    
     /* Prompt user for input */
-    playerSelection = prompt("Enter your choice: ");
+    function getPlayerChoice(playerChoice) {
+
+    playerChoice = prompt("Enter your choice: ");
+    return playerChoice;
+    }
+
+    playerSelection = getPlayerChoice(playerChoice);
     console.log("Player: " + playerSelection);
 
     if (playerSelection == null)
