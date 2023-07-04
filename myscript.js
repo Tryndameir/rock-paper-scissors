@@ -7,8 +7,6 @@ const array = ["rock", "paper", "scissors"];
 let playerChoice = "";
 
 
-
-
 /* Function takes player choice and cpu choice, compares it and determines a winner */
 function playRound (playerSelection, computerSelection) {
 
@@ -42,7 +40,7 @@ function playRound (playerSelection, computerSelection) {
         playerSelection = playerSelection.toLowerCase();
     }
 
-    if (playerSelection == "rock" && computerSelection == "rock") 
+    if (((playerSelection == "rock") && (computerSelection == "rock")) || ((playerSelection == "paper") && (computerSelection == "paper")) || ((playerSelection == "scissors") && (computerSelection == "scissors"))) 
     {
     console.log("It's a tie!\n");
     }
