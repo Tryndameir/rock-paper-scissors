@@ -23,9 +23,12 @@ function playRound (playerSelection, computerSelection) {
     /* Prompt user for input */
     function getPlayerChoice(playerChoice) {
 
-    playerChoice = prompt("Enter your choice: ");
-    return playerChoice;
-    }
+        playerChoice = prompt("Enter your choice: "); 
+        while ((playerChoice !== "rock") && (playerChoice !== "paper") && (playerChoice !== "scissors")) {
+            playerChoice = prompt("Please enter a valid choice: "); 
+        }
+        return playerChoice;
+        }
 
     playerSelection = getPlayerChoice(playerChoice);
     console.log("Player: " + playerSelection);
@@ -43,6 +46,7 @@ function playRound (playerSelection, computerSelection) {
     if (((playerSelection == "rock") && (computerSelection == "rock")) || ((playerSelection == "paper") && (computerSelection == "paper")) || ((playerSelection == "scissors") && (computerSelection == "scissors"))) 
     {
     console.log("It's a tie!\n");
+    alert("It's a tie!");
     }
 
     /* Win condition*/
@@ -59,6 +63,29 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
-playRound();
+function game() {
+
+    for (let i = 0; i < 5; i++)
+    {
+        playRound();
+    }
+
+    if (player > cpu)
+    {
+        alert("You win the game!!!!!");
+    }
+
+    else if (cpu > player)
+    {
+        alert("You lose...");
+    }
+
+    else 
+    {
+        alert("It's a tie!");
+    }
+}
+
+game();
 
     
