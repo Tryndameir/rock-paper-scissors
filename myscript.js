@@ -45,8 +45,17 @@ function playRound (playerSelection, computerSelection) {
     console.log("It's a tie!\n");
     }
 
+    /* Win condition*/
+    else if (((playerSelection == "rock") && ((computerSelection == "scissors")) || ((playerSelection == "paper") && (computerSelection == "rock")) || ((playerSelection == "scissors") && computerSelection == "paper")))
+    {
+        player += 1;
+        alert("You Win! " + playerSelection + " beats " + computerSelection);
+    }
+
+    /* Lose condition */
     else {
-        console.log("GG");
+        cpu += 1;
+        alert("You lose! " + playerSelection + " loses to " + computerSelection);
     }
 }
 
