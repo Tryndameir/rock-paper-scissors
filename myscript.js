@@ -68,7 +68,7 @@ function playRound (playerSelection, computerSelection) {
 function game() {
 
     /* Loop to play game 5 times */
-    for (let i = 0; i < 5; i++)
+    /* for (let i = 0; i < 5; i++)
     {
         playRound();
     }
@@ -86,7 +86,7 @@ function game() {
     else 
     {
         alert("It's a tie!");
-    }
+    } */
 }
 
 game();
