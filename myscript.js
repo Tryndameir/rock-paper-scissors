@@ -6,6 +6,11 @@ let cpu = 0;
 const array = ["rock", "paper", "scissors"];
 let playerChoice = "";
 
+const rockButton = document.querySelector('.rock');
+const paperButton = document.querySelector('.paper');
+const scissorsButton = document.querySelector('.scissors');
+
+
 
 /* Function takes player choice and cpu choice, compares it and determines a winner */
 function playRound (playerSelection, computerSelection) {
