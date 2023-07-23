@@ -44,7 +44,7 @@ function playRound (playerSelection, computerSelection) {
     if (((playerSelection == "rock") && (computerSelection == "rock")) || ((playerSelection == "paper") && (computerSelection == "paper")) || ((playerSelection == "scissors") && (computerSelection == "scissors"))) 
     {
     const p = document.createElement('p');
-    p.innerText = `It's a tie ${playerSelection}`;
+    p.innerText = `It's a tie`;
     outcomeDiv.appendChild(p);
     }
 
@@ -67,52 +67,80 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
+    const winner = (player, cpu) => {
+        if (player == 5)
+        {
+            const h2 = document.createElement('h2');
+            h2.innerText = `You won the game!`;
+            outcomeDiv.appendChild(h2);
+        }
+
+        if (cpu == 5) {
+            const h2 = document.createElement('h2');
+            h2.innerText = `You lost the game..`;
+            outcomeDiv.appendChild(h2);
+        }
+    }
+
     rockButton.addEventListener('click', () => {
     computerSelection = getComputerChoice(array);
     playerSelection = "rock";
     playRound(playerSelection, computerSelection);
+    winner(player, cpu);
     })
     
     paperButton.addEventListener('click', () => {
     computerSelection = getComputerChoice(array);
     playerSelection = "paper";
     playRound(playerSelection, computerSelection);
+    winner(player, cpu);
     })
     
     scissorsButton.addEventListener('click', () => {
     computerSelection = getComputerChoice(array);
     playerSelection = "scissors";
     playRound(playerSelection, computerSelection);
+    winner(player, cpu);
     })
 
 playRound();
 
 
 
-/* function game() {
+ /* function game() {
 
     // Loop to play game 5 times 
      for (let i = 0; i < 5; i++)
     {
         playRound();
+        
     }
 
     if (player > cpu)
     {
-        alert("You win the game!!!!!");
+        const p = document.createElement('p');
+        p.innerText = (`You win The Game!`);
+        outcomeDiv.appendChild(p);
+        p.remove;
     }
 
     else if (cpu > player)
     {
-        alert("You lose...");
+        const p = document.createElement('p');
+        p.innerText = (`You Lose The Game!`);
+        outcomeDiv.appendChild(p);
+        p.remove;
     }
 
     else 
     {
-        alert("It's a tie!");
+        const p = document.createElement('p');
+        p.innerText = (`It's a draw`);
+        outcomeDiv.appendChild(p);
+        p.remove;
     } 
 }
 
-  game();  */
+  game(); */
 
     
