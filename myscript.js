@@ -9,6 +9,7 @@ const rockButton = document.querySelector('.rock');
 const paperButton = document.querySelector('.paper');
 const scissorsButton = document.querySelector('.scissors');
 const outcomeDiv = document.querySelector('.outcome');
+const resetButton = document.querySelector('.reset');
 
 /* Function to get random choice from cpu */
 function getComputerChoice(arr) {
@@ -102,6 +103,12 @@ function playRound (playerSelection, computerSelection) {
     playRound(playerSelection, computerSelection);
     winner(player, cpu);
     })
+
+    resetButton.addEventListener('click', () => {
+        window.location.reload();
+    })
+
+
 
 playRound();
 
