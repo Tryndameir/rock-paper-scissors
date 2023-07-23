@@ -10,6 +10,9 @@ const paperButton = document.querySelector('.paper');
 const scissorsButton = document.querySelector('.scissors');
 const outcomeDiv = document.querySelector('.outcome');
 const resetButton = document.querySelector('.reset');
+const playerScoreSpan = document.querySelector('.player-score');
+const cpuScoreSpan = document.querySelector('.cpu-score');
+
 
 /* Function to get random choice from cpu */
 function getComputerChoice(arr) {
@@ -55,6 +58,11 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
+const updateScore = (player, cpu) => {
+    playerScoreSpan.innerText = `Player: ${player}`;
+    cpuScoreSpan.innerText = `Cpu: ${cpu}`;
+}
+
     const winner = (player, cpu) => {
         if (player == 5)
         {
@@ -75,6 +83,7 @@ function playRound (playerSelection, computerSelection) {
     playerSelection = "rock";
     playRound(playerSelection, computerSelection);
     winner(player, cpu);
+    updateScore(player, cpu);
     })
     
     paperButton.addEventListener('click', () => {
@@ -82,6 +91,8 @@ function playRound (playerSelection, computerSelection) {
     playerSelection = "paper";
     playRound(playerSelection, computerSelection);
     winner(player, cpu);
+    updateScore(player, cpu);
+
     })
     
     scissorsButton.addEventListener('click', () => {
@@ -89,13 +100,13 @@ function playRound (playerSelection, computerSelection) {
     playerSelection = "scissors";
     playRound(playerSelection, computerSelection);
     winner(player, cpu);
+    updateScore(player, cpu);
+
     })
 
     resetButton.addEventListener('click', () => {
         window.location.reload();
     })
-
-
 
 playRound();
 
