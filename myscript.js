@@ -19,19 +19,6 @@ function getComputerChoice(arr) {
     return result;
 }
 
-/* Prompt user for input */
-//function getPlayerChoice(playerChoice) {
-
-        
-
-    /* While loop incase user enters wrong choice */
-    //while ((playerChoice !== "rock") && (playerChoice !== "paper") && (playerChoice !== "scissors")) {
-      //  playerChoice = prompt("Please enter a valid choice: "); 
-    //}
-   // return playerSelection;
-    //} 
-
-
 /* Function takes player choice and cpu choice, compares it and determines a winner */
 function playRound (playerSelection, computerSelection) {
 
@@ -112,42 +99,5 @@ function playRound (playerSelection, computerSelection) {
 
 playRound();
 
-
-
- /* function game() {
-
-    // Loop to play game 5 times 
-     for (let i = 0; i < 5; i++)
-    {
-        playRound();
-        
-    }
-
-    if (player > cpu)
-    {
-        const p = document.createElement('p');
-        p.innerText = (`You win The Game!`);
-        outcomeDiv.appendChild(p);
-        p.remove;
-    }
-
-    else if (cpu > player)
-    {
-        const p = document.createElement('p');
-        p.innerText = (`You Lose The Game!`);
-        outcomeDiv.appendChild(p);
-        p.remove;
-    }
-
-    else 
-    {
-        const p = document.createElement('p');
-        p.innerText = (`It's a draw`);
-        outcomeDiv.appendChild(p);
-        p.remove;
-    } 
-}
-
-  game(); */
 
     
